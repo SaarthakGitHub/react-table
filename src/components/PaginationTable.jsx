@@ -68,11 +68,11 @@ const PaginationTable = () => {
             <input type='number' defaultValue={pageIndex+1} onChange={(e) => gotoPage(e.target.value ? Number(e.target.value)-1 : 0)} />
           </span>
           <span>
-          <select onChange={e => setPageSize(Number(e.target.value))}>
+          <select value={pageSize} onChange={e => setPageSize(Number(e.target.value))}>
             {
-                [10,50,100].map(value => (
-                    <option value={value}>
-                        Show {value}
+                [10,50,100].map(pageSize => (
+                    <option value={pageSize}>
+                        Show {pageSize}
                     </option>
                 ))
             }
